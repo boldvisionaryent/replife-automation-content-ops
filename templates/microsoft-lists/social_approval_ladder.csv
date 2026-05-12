@@ -1,0 +1,12 @@
+Approval Stage,Meaning,Allowed Next Action,Human Review Required?
+Idea,Raw idea or theme only.,Draft content or assign owner.,Yes
+Drafted,"Text, outline, or prompt exists but has not been reviewed.",Review draft and attach media needs.,Yes
+Media Validated,Related media passed filename and media-spec validation.,Build package.,Yes
+Packaged,Platform-specific package exists.,Review caption and settings.,Yes
+Caption Reviewed,Caption and platform notes were reviewed by a human.,Build Postiz queue.,Yes
+Queue Built,approved_postiz_queue.csv row exists.,Lint settings and decide approval.,Yes
+Approved for Postiz,Human approved queue row for scheduling.,Upload media or schedule in Postiz.,Yes
+Uploaded to Postiz,Media was uploaded and queue row has media ID/path.,Preview loader or manually schedule.,Yes
+Scheduled in Postiz,Post is visible in Postiz calendar.,Wait for post or verify scheduled date.,Yes
+Posted / Complete,Post is live or manually marked complete.,Archive output and record results.,Yes
+Archived,Working files were moved to archive/backup location.,Use for reports only.,No
