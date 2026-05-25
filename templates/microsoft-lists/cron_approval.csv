@@ -1,0 +1,7 @@
+job_name,command,manual_test_1_passed,manual_test_2_passed,pre_cron_validation_passed,better_stack_heartbeat,enabled_in_cron,disable_command,notes
+Matomo archive,bash scripts/matomo_archive.sh,no,no,no,,no,comment out crontab line,
+Weekly operations report,python scripts/weekly_operations_report.py,no,no,no,,no,comment out crontab line,
+Weekly content ops dry-run,bash scripts/weekly_content_ops_runner.sh,no,no,no,,no,comment out crontab line,
+OneDrive media archive,bash scripts/onedrive_media_archive.sh,no,no,no,,no,comment out crontab line,
+Restic OneDrive backup,bash scripts/restic_onedrive_backup.sh,no,no,no,,no,comment out crontab line,
+OneDrive restore test,bash scripts/onedrive_restore_test.sh,no,no,no,,no,comment out crontab line,

@@ -1,0 +1,56 @@
+services:
+  db:
+    image: ${MARIADB_IMAGE_REF}
+    container_name: replife-matomo-db
+    restart: unless-stopped
+    command: --max-allowed-packet=64MB
+    environment:
+      MARIADB_ROOT_PASSWORD: ${MATOMO_DB_ROOT_PASSWORD}
+      MARIADB_DATABASE: ${MATOMO_DB_NAME}
+      MARIADB_USER: ${MATOMO_DB_USER}
+      MARIADB_PASSWORD: ${MATOMO_DB_PASSWORD}
+      TZ: ${TZ:-America/New_York}
+    volumes:
+      - matomo-db-data:/var/lib/mysql
+    networks:
+      - matomo-network
+    logging:
+      driver: json-file
+      options:
+        max-size: 10m
+        max-file: "3"
+
+  matomo:
+    image: ${MATOMO_IMAGE_REF}
+    container_name: replife-matomo-web
+    restart: unless-stopped
+    depends_on:
+      - db
+    ports:
+      - "127.0.0.1:8081:80"
+    environment:
+      MATOMO_DATABASE_HOST: db
+      MATOMO_DATABASE_ADAPTER: mysql
+      MATOMO_DATABASE_TABLES_PREFIX: matomo_
+      MATOMO_DATABASE_USERNAME: ${MATOMO_DB_USER}
+      MATOMO_DATABASE_PASSWORD: ${MATOMO_DB_PASSWORD}
+      MATOMO_DATABASE_DBNAME: ${MATOMO_DB_NAME}
+      PHP_MEMORY_LIMIT: 512M
+      TZ: ${TZ:-America/New_York}
+    volumes:
+      - matomo-app-data:/var/www/html
+    networks:
+      - matomo-network
+    logging:
+      driver: json-file
+      options:
+        max-size: 10m
+        max-file: "3"
+
+volumes:
+  matomo-db-data:
+  matomo-app-data:
+
+networks:
+  matomo-network:
+    driver: bridge

@@ -1,0 +1,8 @@
+service,purpose,local_port,public_url,compose_folder,owner,status,backup_or_restore_note,last_checked,notes
+Matomo,Content analytics only,127.0.0.1:8081,https://analytics.YOURDOMAIN.com,~/replife-backend/services/matomo,owner,planned,,,
+Existing n8n,Reminders and light coordination only,127.0.0.1:5678,https://automations.YOURDOMAIN.com,existing install,owner,existing,,,
+Uptime Kuma,Internal status dashboard,127.0.0.1:3001,https://monitor.YOURDOMAIN.com,~/replife-backend/services/uptime-kuma,owner,planned,,,
+Postiz,Approved social scheduling only,127.0.0.1:4007,https://social.YOURDOMAIN.com,~/replife-backend/services/postiz,owner,planned,,,
+Postiz Temporal UI,Local Postiz internals only,127.0.0.1:4080,none,~/replife-backend/services/postiz,owner,planned,Do not expose publicly,,
+Better Stack,External public monitors and cron heartbeats,none,Better Stack website,none,owner,planned,,,
+OneDrive/restic,Archive and encrypted backup,none,OneDrive,~/replife-backend/scripts,owner,planned,Restore test required before cron,,

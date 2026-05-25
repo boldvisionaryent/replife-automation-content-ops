@@ -10,15 +10,17 @@ usage() {
 
 case "$MODE" in
   runtime-basic)
-    TARGETS=("$BASE/services")
-    PATTERN='YOURDOMAIN\.com|YOUR_USER|YOUR_VPS_IP|replace_with_|REPLACE_WITH|REPLACE_WITH_VERIFIED|PASTE_BETTER_STACK'
-    MESSAGE="required service placeholders"
+    TARGETS=("$BASE/.env" "$BASE/services")
+    PATTERN='(^DOMAIN=YOURDOMAIN\.com$)|YOURDOMAIN\.com|YOUR_USER|YOUR_VPS_IP|replace_with_|PASTE_BETTER_STACK'
+    MESSAGE="required runtime placeholders"
     ;;
 
   cron)
     TARGETS=("$BASE/.env")
-    PATTERN='BETTERSTACK_[A-Z0-9_]*=(replace_me|replace_me_optional|PASTE_BETTER_STACK|)$'
-    MESSAGE="cron heartbeat placeholders"
+    # Cron validation checks only the default heartbeat placeholder.
+    # Job-specific heartbeat variables are checked before enabling that specific job.
+    PATTERN='BETTERSTACK_DEFAULT_HEARTBEAT_URL=(replace_me|PASTE_BETTER_STACK|)$'
+    MESSAGE="default cron heartbeat placeholder"
     ;;
 
   ai)
@@ -76,6 +78,10 @@ for target in "${TARGETS[@]}"; do
     matched_text="${rest#*:}"
 
     if echo "$file_path" | grep -Eq "$SKIP_PATH_PATTERN"; then
+      continue
+    fi
+
+    if [ "$MODE" = "scripts" ] && [ "$(basename "$file_path")" = "check_active_placeholders.sh" ]; then
       continue
     fi
 

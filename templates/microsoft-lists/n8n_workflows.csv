@@ -1,0 +1,5 @@
+workflow_name,tag,purpose,allowed_nodes_only,uses_code_node,uses_execute_command,owner,last_reviewed,notes
+RepLife - Weekly Planning Reminder,RepLife,Remind owner to choose theme and content plan,yes,no,no,owner,,
+RepLife - Postiz Review Reminder,RepLife,Remind owner to review queue rows before scheduling,yes,no,no,owner,,
+RepLife - Publishing Window Reminder,RepLife,Remind owner to check scheduled posts and engagement,yes,no,no,owner,,
+RepLife - Backup Review Reminder,RepLife,Remind owner to check backup and restore-test status,yes,no,no,owner,,

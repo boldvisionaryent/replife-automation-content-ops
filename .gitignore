@@ -1,48 +1,49 @@
-# Private environment and secrets
+# Private environment files
 .env
-**/.env
+.env.*
+!.env.example
+
+# Secrets and credentials
 secrets/
-**/secrets/
 *.pem
 *.key
 *.crt
 *.p12
 *.pfx
-rclone.conf
-# Python environment and caches
-venv/
-__pycache__/
-.pytest_cache/
-.ruff_cache/
-*.pyc
-# Logs, backups, generated reports, and local state
+id_rsa
+id_ed25519
+
+# Live app/runtime data
+n8n-files/
 logs/
-backups/
 outputs/
-audit/
-*.log
-*.sqlite
-*.sqlite3
-*.db
-*.tar
-*.tar.gz
-*.zip
-*.gz
-# Large or generated media
-media-inbox/
-media-archive/
 inputs/media/
-*.mp4
-*.mov
-*.mkv
-*.wav
-*.mp3
-*.flac
-*.png
-*.jpg
-*.jpeg
-*.webp
-# Docker and service runtime data
-services/**/data/
-services/**/volumes/
-services/**/.cache/
+inputs/social/
+inputs/productprompts/
+inputs/outreach/
+inputs/comments/
+
+# Safety backups
+replife-safety-backups/
+*-backup-*/
+*-copy-*/
+
+# Service runtime/private files
+services/*/.env
+services/*/data/
+services/*/volumes/
+services/*/backups/
+services/postiz/postiz-docker-compose/
+
+# Python/local cache
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.mypy_cache/
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

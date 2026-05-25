@@ -1,0 +1,18 @@
+Account,VPS Purpose,Required or Optional,Login Confirmed,Connected in Tool,Notes
+Microsoft Lists,Operations tracking,Required,Yes,,
+GitHub,Version control,Required,Yes,,
+LobeHub,Manual AI workspace,Required,Yes,,
+GitHub Models,Script AI provider,Required,Yes,,
+Postiz,Approved social scheduling,Required,,,On Premise
+Matomo,Public content analytics,Required,,,On Premise
+Better Stack,External monitoring and heartbeats,Required,Yes,,
+Uptime Kuma,Internal monitoring,Required,,,On Premise
+OneDrive,Archive and backup target,Required,Yes,,
+Facebook,Social channel,Required,Yes,,
+Instagram,Social channel,Required,Yes,,
+YouTube,Social channel,Required,Yes,,
+TikTok,Social channel,Required,Yes,,
+LinkedIn,Optional social channel,Optional,,,
+X,Optional social channel,Optional,,,
+Reddit,Optional social channel,Optional,,,
+Medium,Optional social channel,Optional,,,

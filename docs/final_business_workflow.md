@@ -4,7 +4,8 @@
 1. Choose the RepLife Show monthly theme.
 2. Choose the SHAKEUM campaign or song tie-in for that month.
 3. Generate Product Prompting concepts only as creative draft support tied to the theme.
-4. Create or import approved media.5. Validate filenames and media specs.
+4. Create or import approved media.
+5. Validate filenames and media specs.
 6. Transcribe approved audio/video when needed.
 7. Repurpose transcripts into clip ideas, captions, website drafts, and show notes.
 8. Build social publishing packages.
